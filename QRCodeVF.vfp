@@ -1,0 +1,15 @@
+<apex:page controller="QRCodeController">
+  <apex:form >
+    <apex:pageBlock title="QR Code Generator">
+      <apex:pageBlockSection>
+        <apex:inputText value="{!inputText}" label="Enter Text" />
+      </apex:pageBlockSection>
+      <apex:pageBlockButtons>
+        <apex:commandButton value="Generate QR Code" action="{!generateQRCode}" rerender="qrcode" />
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection >
+        <apex:image id="qrcode" value="{!qrcode} />
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
