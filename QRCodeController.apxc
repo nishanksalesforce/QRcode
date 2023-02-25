@@ -1,0 +1,14 @@
+public with sharing class QRCodeController {
+  public String inputText { get; set; }
+  public String qrcode { get; set; }
+  
+  public void generateQRCode() {
+    if (inputText != null && inputText.trim() != '') {
+      String encoded = EncodingUtil.urlEncode(inputText, 'UTF-8');
+      qrcode = 'https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=' + encoded;
+    } else {
+      qrcode = null;
+    }
+      System.debug(qrcode);
+  }
+}
